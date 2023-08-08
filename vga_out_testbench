@@ -1,0 +1,20 @@
+module white_screen_tb ();
+
+reg clk_100;
+
+initial begin  
+    clk_100 = 1'b0;
+
+    forever
+    #5 clk_100 = ~clk_100;
+
+end
+
+top_level_module test_inst(
+    .CLK100MHZ(clk_100),
+    .hsync(hsync),
+    .vsync(vsync),
+    .pix_color(pix_color)
+);
+
+endmodule
